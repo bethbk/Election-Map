@@ -23,8 +23,8 @@ var makeCandidate = function(firstNameLastName, partyColor)
   
 };
   
-var jane = makeCandidate("Jane Doesitall", [245,141,136]);
-var betsy = makeCandidate("Betsy Rocks", [132,17,11]);
+var jane = makeCandidate("Jane Doesitall", [132,17,11]);
+var betsy = makeCandidate("Betsy Rocks", [245,141,136]);
 
 console.log(jane)
 console.log(betsy)
@@ -64,6 +64,35 @@ var setStateResults = function(state) {
   }
   
   else theStates[state].rgbColor = [11,32,57];
+  
+var stateResultsTable = document.getElementById("stateResults");
+
+var header = stateResultsTable.children[0];
+var body = stateResultsTable.children[1];
+
+var stateName = header.children[0].children[0];
+var stateAbbrev = header.children[0].children[1];
+var firstCandidateName = body.children[0].children[0];
+var firstCandidateResults = body.children[0].children[1];
+var secondCandidateName = body.children[1].children[0];
+var secondCandidateResults = body.children[1].children[1];
+var winnerName = body.children[2].children[1];
+
+
+stateName.innerText = theStates[state].nameFull;
+stateAbbrev.innerText = theStates[state].nameAbbrev;
+firstCandidateName.innerText = jane.name;
+firstCandidateResults.innerText = jane.electionResults[state];
+secondCandidateName.innerText = betsy.name;
+secondCandidateResults.innerText = betsy.electionResults[state];
+  
+
+if (theStates[state].winner === null) {
+  winnerName.innerText = "DRAW";
+}
+else {
+  winnerName.innerText = theStates[state].winner.name;
+}
 }
   
 
@@ -97,34 +126,7 @@ row.children[2].innerText = betsy.name;
 row.children[3].innerText = betsy.totalVotes;
 row.children[5].innerText = winner;
 
-var stateResultsTable = document.getElementById("stateResults");
 
-var theader = stateResultsTable.children[0];
-var tbody = stateResultsTable.children[1];
-
-var stateName = theader.children[0].children[0];
-var stateAbbrev = theader.children[0].children[1];
-var firstCandidateName = tbody.children[0].children[0];
-var firstCandidateResults = tbody.children[0].children[1];
-var secondCandidateName = tbody.children[1].children[0];
-var secondCandidateResults = tbody.children[1].children[1];
-var winnerName = tbody.children[2].children[1];
-
-
-stateName.innerText = theStates[state].nameFull;
-stateAbbrev.innerText = theStates[state].nameAbbrev;
-firstCandidateName.innerText = jane.name;
-firstCandidateResults.innerText = jane.electionResults[state];
-secondCandidateName.innerText = betsy.name;
-secondCandidateResults.innerText = betsy.electionResults[state];
-winnerName.innerText = winner;  
-
-if (theStates[state].winner === null) {
-  winnerName.innerText = "DRAW";
-}
-else {
-  winnerName.innerText = theStates[state].winner.name;
-}
   
 
 
