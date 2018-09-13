@@ -56,19 +56,19 @@ th, td {
   color: white;
 }
 #countryResults th {
-  background-color: #f16059;
+  background-color: rgb(85,98,112); /***original Skillcrush color: #f16059;****/
   color: white;
 }
 .name-1 {
-  background-color: rgb(132,17,11);
+  background-color: rgb(255,156,91);
   color: white;
 }
 .name-2 {
-  background-color: rgb(245, 141, 136);
+  background-color: rgb(11,32,57);
   color: white;
 }
 .winner {
-  background-color: #f16059;
+  background-color: rgb(85,98,112); /***original Skillcrush color: #f16059;***/
   color: white;
 }
 

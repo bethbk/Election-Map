@@ -23,8 +23,8 @@ var makeCandidate = function(firstNameLastName, partyColor)
   
 };
   
-var jane = makeCandidate("Jane Doesitall", [132,17,11]);
-var betsy = makeCandidate("Betsy Rocks", [245,141,136]);
+var jane = makeCandidate("Jane Doesitall", [255, 156, 91]);
+var betsy = makeCandidate("Betsy Rocks", [11,32,57]);
 
 console.log(jane)
 console.log(betsy)
@@ -63,7 +63,7 @@ var setStateResults = function(state) {
     theStates[state].rgbColor = stateWinner.partyColor;
   }
   
-  else theStates[state].rgbColor = [11,32,57];
+  else theStates[state].rgbColor = [85,98,112];
   
 var stateResultsTable = document.getElementById("stateResults");
 
